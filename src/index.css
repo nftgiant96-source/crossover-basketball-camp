@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand teal: #05acae */
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; padding: 0;
+    background: #0A0A0A; color: #fff;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  #root {
+    width: 100%; max-width: 100%; margin: 0;
+    text-align: left; border: none;
+    min-height: 100svh; display: block;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Bebas Neue', Impact, sans-serif; }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #05acae 0%, #07cdd0 50%, #80e3e4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-white {
+    background: linear-gradient(135deg, #ffffff 0%, #d1d5db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(5,172,174,0.2);
+  }
+
+  .nav-link { position: relative; transition: color 0.2s; }
+  .nav-link::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 2px; background: #05acae;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #05acae, #049496);
+    color: white; font-weight: 700; padding: 14px 32px;
+    border-radius: 4px; letter-spacing: 0.05em;
+    text-transform: uppercase; transition: all 0.3s ease;
+    border: 2px solid transparent; display: inline-block; cursor: pointer;
+  }
+  .btn-primary:hover {
+    background: transparent; border-color: #05acae; color: #05acae;
+    box-shadow: 0 0 30px rgba(5,172,174,0.4); transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent; color: white; font-weight: 700;
+    padding: 14px 32px; border-radius: 4px; letter-spacing: 0.05em;
+    text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4);
+    transition: all 0.3s ease; display: inline-block; cursor: pointer;
+  }
+  .btn-outline:hover {
+    border-color: white; background: rgba(255,255,255,0.08); transform: translateY(-2px);
+  }
+
+  .section-label {
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #05acae;
+  }
+
+  .program-card {
+    background: #111111; border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px; overflow: hidden; transition: all 0.3s ease;
+  }
+  .program-card:hover {
+    border-color: rgba(5,172,174,0.4);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4); transform: translateY(-6px);
+  }
+
+  .input-field {
+    width: 100%; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1); color: white;
+    padding: 14px 18px; border-radius: 4px; font-size: 0.95rem;
+    transition: all 0.3s ease; outline: none; font-family: 'Inter', sans-serif;
+  }
+  .input-field::placeholder { color: rgba(255,255,255,0.3); }
+  .input-field:focus {
+    border-color: #05acae; background: rgba(5,172,174,0.05);
+    box-shadow: 0 0 0 3px rgba(5,172,174,0.1);
+  }
+
+  .divider-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(5,172,174,0.5), transparent);
+  }
+
+  .basketball-pattern {
+    background-image:
+      radial-gradient(circle at 25px 25px, rgba(5,172,174,0.04) 2px, transparent 2px),
+      radial-gradient(circle at 75px 75px, rgba(5,172,174,0.04) 2px, transparent 2px);
+    background-size: 100px 100px;
+  }
+
+  /* Instagram embed overrides */
+  .instagram-media {
+    min-width: unset !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
