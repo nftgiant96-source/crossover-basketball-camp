@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 import './App.css'
 import {
   Menu, X, ChevronRight, MapPin, Phone, Mail,
@@ -588,11 +589,7 @@ function Directors() {
    REGISTRATION
 ═══════════════════════════════════════════════════ */
 function Registration() {
-  const [form, setForm] = useState({ name: '', age: '', email: '', program: '', level: '', notes: '' })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
-  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true) }
+  const [state, handleSubmit] = useForm('xwvapanr')
 
   return (
     <section id="register" className="relative bg-black py-24 sm:py-32 overflow-hidden">
@@ -648,26 +645,19 @@ function Registration() {
           {/* Form */}
           <AnimatedSection delay={150} className="lg:col-span-3">
             <div className="bg-[#111] border border-white/8 rounded-2xl p-8 sm:p-10">
-              {submitted ? (
+              {state.succeeded ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 rounded-full bg-[#05acae]/15 border border-[#05acae]/40 flex items-center justify-center mx-auto mb-5">
                     <CheckCircle size={32} className="text-[#05acae]" />
                   </div>
                   <h3 className="font-display text-3xl text-white tracking-wide mb-3">YOU'RE IN!</h3>
                   <p className="text-gray-400 max-w-sm mx-auto">
-                    Thanks, {form.name.split(' ')[0]}! We'll be in touch at{' '}
-                    <span className="text-white">{form.email}</span> within 48 hours with next steps.
+                    Registration received! We'll be in touch within 48 hours with next steps.
                   </p>
                   <p className="text-gray-500 text-sm mt-3">
                     Questions? Call <a href="tel:5193199034" className="text-[#05acae]">519.319.9034</a> or email{' '}
                     <a href="mailto:crossovercamp@hotmail.com" className="text-[#05acae]">crossovercamp@hotmail.com</a>
                   </p>
-                  <button
-                    onClick={() => { setSubmitted(false); setForm({ name: '', age: '', email: '', program: '', level: '', notes: '' }) }}
-                    className="mt-8 text-[#05acae] text-sm font-medium hover:underline"
-                  >
-                    Register another athlete
-                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -680,36 +670,41 @@ function Registration() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Full Name *</label>
-                      <input name="name" value={form.name} onChange={handleChange} required placeholder="e.g. Jordan Smith" className="input-field" />
+                      <input name="name" required placeholder="e.g. Jordan Smith" className="input-field" />
+                      <ValidationError field="name" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Age *</label>
-                      <input name="age" value={form.age} onChange={handleChange} required type="number" min="7" max="20" placeholder="e.g. 14" className="input-field" />
+                      <input name="age" required type="number" min="7" max="20" placeholder="e.g. 14" className="input-field" />
+                      <ValidationError field="age" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Email Address *</label>
-                    <input name="email" value={form.email} onChange={handleChange} required type="email" placeholder="parent@email.com" className="input-field" />
+                    <input name="email" required type="email" placeholder="parent@email.com" className="input-field" />
+                    <ValidationError field="email" errors={state.errors} className="text-red-400 text-xs mt-1" />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Program *</label>
-                      <select name="program" value={form.program} onChange={handleChange} required className="input-field" style={{ appearance: 'none' }}>
-                        <option value="" disabled>Select program</option>
+                      <select name="program" required className="input-field" style={{ appearance: 'none' }}>
+                        <option value="">Select program</option>
                         <option>JR Camp (Junior)</option>
                         <option>SR Camp (Senior)</option>
                       </select>
+                      <ValidationError field="program" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Skill Level *</label>
-                      <select name="level" value={form.level} onChange={handleChange} required className="input-field" style={{ appearance: 'none' }}>
-                        <option value="" disabled>Select level</option>
+                      <select name="level" required className="input-field" style={{ appearance: 'none' }}>
+                        <option value="">Select level</option>
                         <option>Beginner</option>
                         <option>Intermediate</option>
                         <option>Advanced</option>
                       </select>
+                      <ValidationError field="level" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                   </div>
 
@@ -717,11 +712,13 @@ function Registration() {
                     <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">
                       Anything we should know? <span className="text-gray-600">(optional)</span>
                     </label>
-                    <textarea name="notes" value={form.notes} onChange={handleChange} rows={3} placeholder="Positions played, goals, prior experience..." className="input-field resize-none" />
+                    <textarea name="notes" rows={3} placeholder="Positions played, goals, prior experience..." className="input-field resize-none" />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full text-center text-base py-4">
-                    Submit Registration — $325
+                  <ValidationError errors={state.errors} className="text-red-400 text-sm" />
+
+                  <button type="submit" disabled={state.submitting} className="btn-primary w-full text-center text-base py-4">
+                    {state.submitting ? 'Submitting...' : 'Submit Registration — $325'}
                   </button>
                   <p className="text-center text-xs text-gray-600">
                     No payment required now. We'll send payment details on confirmation.
@@ -740,8 +737,7 @@ function Registration() {
    CONTACT
 ═══════════════════════════════════════════════════ */
 function Contact() {
-  const [msg, setMsg] = useState({ name: '', email: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [state, handleSubmit] = useForm('xwvapanr')
 
   return (
     <section id="contact" className="bg-[#0D0D0D] py-24 sm:py-32">
@@ -803,36 +799,36 @@ function Contact() {
           {/* Contact form */}
           <AnimatedSection delay={150} className="lg:col-span-2">
             <div className="bg-[#111] border border-white/8 rounded-2xl p-8">
-              {sent ? (
+              {state.succeeded ? (
                 <div className="text-center py-8">
                   <div className="w-12 h-12 rounded-full bg-[#05acae]/15 flex items-center justify-center mx-auto mb-4">
                     <CheckCircle size={24} className="text-[#05acae]" />
                   </div>
                   <h3 className="font-display text-2xl text-white tracking-wide mb-2">MESSAGE SENT!</h3>
                   <p className="text-gray-400 text-sm">We'll get back to you within 24 hours.</p>
-                  <button onClick={() => { setSent(false); setMsg({ name: '', email: '', message: '' }) }}
-                    className="mt-6 text-[#05acae] text-sm hover:underline">
-                    Send another message
-                  </button>
                 </div>
               ) : (
-                <form onSubmit={(e) => { e.preventDefault(); setSent(true) }} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Name</label>
-                      <input name="name" value={msg.name} onChange={(e) => setMsg(m => ({ ...m, name: e.target.value }))} required placeholder="Your name" className="input-field" />
+                      <input name="name" required placeholder="Your name" className="input-field" />
+                      <ValidationError field="name" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Email</label>
-                      <input name="email" value={msg.email} onChange={(e) => setMsg(m => ({ ...m, email: e.target.value }))} required type="email" placeholder="your@email.com" className="input-field" />
+                      <input name="email" required type="email" placeholder="your@email.com" className="input-field" />
+                      <ValidationError field="email" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Message</label>
-                    <textarea name="message" value={msg.message} onChange={(e) => setMsg(m => ({ ...m, message: e.target.value }))} required rows={5} placeholder="Ask us anything about camp..." className="input-field resize-none" />
+                    <textarea name="message" required rows={5} placeholder="Ask us anything about camp..." className="input-field resize-none" />
+                    <ValidationError field="message" errors={state.errors} className="text-red-400 text-xs mt-1" />
                   </div>
-                  <button type="submit" className="btn-primary w-full text-center py-4">
-                    Send Message
+                  <ValidationError errors={state.errors} className="text-red-400 text-sm" />
+                  <button type="submit" disabled={state.submitting} className="btn-primary w-full text-center py-4">
+                    {state.submitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               )}
