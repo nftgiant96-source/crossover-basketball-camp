@@ -43,7 +43,7 @@ function Counter({ end, suffix = '', duration = 2000 }) {
   const [count, setCount] = useState(0)
   const [ref, inView] = useInView(0.3)
   useEffect(() => {
-    if (!inView) return
+    if (!inView || typeof end !== 'number') return
     let start = 0
     const step = end / (duration / 16)
     const timer = setInterval(() => {
@@ -53,6 +53,7 @@ function Counter({ end, suffix = '', duration = 2000 }) {
     }, 16)
     return () => clearInterval(timer)
   }, [inView, end, duration])
+  if (typeof end === 'string') return <span ref={ref}>{end}{suffix}</span>
   return <span ref={ref}>{count.toLocaleString()}{suffix}</span>
 }
 
@@ -338,7 +339,7 @@ function About() {
 function StatsBanner() {
   const stats = [
     { value: 22, suffix: '', label: 'Years in London' },
-    { value: 2004, suffix: '', label: 'Founded' },
+    { value: '2004', suffix: '', label: 'Founded' },
     { value: 5, suffix: ' Days', label: 'Camp Duration' },
     { value: 325, suffix: '', label: 'Per Camper', prefix: '$' },
   ]
