@@ -543,13 +543,13 @@ function Directors() {
     {
       name: 'Umar Chaudry',
       role: 'Camp Director & Coach',
-      desc: 'Co-founder of Crossover Basketball Camp with over 22 years of experience developing youth athletes in London, Ontario. Umar helped lead the Banting Secondary School Senior Boys to back-to-back city and WOSSA championships and brings that winning culture to every camp session.',
+      desc: 'Co-founder of Crossover Basketball Camp with over 22 years of experience developing youth athletes in London, Ontario. Umar helped lead the Banting Secondary School Senior Boys to back-to-back city and WOSSA championships and brings that winning culture to every camp session. He currently serves as the Senior Boys Basketball Head Coach at Banting Secondary School.',
       initial: 'U',
     },
     {
       name: 'Graham Buchanan',
       role: 'Camp Director & Coach',
-      desc: 'Co-founder of Crossover Basketball Camp with over 22 years of experience developing youth athletes in London, Ontario. Graham helped lead the Banting Secondary School Senior Boys to back-to-back city and WOSSA championships and brings that winning culture to every camp session.',
+      desc: 'Co-founder of Crossover Basketball Camp with over 22 years of experience developing youth athletes in London, Ontario. Graham helped lead the Banting Secondary School Senior Boys to back-to-back city and WOSSA championships and brings that winning culture to every camp session. He currently serves as an Assistant Basketball Coach at Saunders Secondary School.',
       initial: 'G',
     },
   ]
