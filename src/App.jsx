@@ -240,7 +240,6 @@ function Hero() {
                 { value: 'July 6–10', label: '2026 Dates' },
                 { value: '$325', label: 'Per Camper' },
                 { value: 'London, ON', label: 'Location' },
-                { value: '22nd', label: 'Year Running' },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="font-display text-2xl sm:text-3xl text-[#05acae] tracking-wide">{s.value}</div>
