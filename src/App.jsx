@@ -312,7 +312,7 @@ function About() {
                 Crossover Basketball Camp has been developing athletes in London, Ontario since 2004. What started as a passion project has grown into one of the city's most respected summer basketball programs — running strong for 22 consecutive years.
               </p>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Led by directors <span className="text-white font-semibold">Umar Chaudry</span> and <span className="text-white font-semibold">Graham Buchanan</span>, our coaching staff brings championship-level experience to every session. Graham led the Banting Secondary School Senior Boys to back-to-back city and WOSSA championships.
+                Led by Camp Directors & Coaches <span className="text-white font-semibold">Umar Chaudry</span> and <span className="text-white font-semibold">Graham Buchanan</span>, our staff brings championship-level experience to every session. Graham led the Banting Secondary School Senior Boys to back-to-back city and WOSSA championships.
               </p>
             </AnimatedSection>
 
@@ -547,7 +547,7 @@ function Directors() {
   const staff = [
     {
       name: 'Umar Chaudry',
-      role: 'Camp Director',
+      role: 'Camp Director & Coach',
       desc: 'Co-founder of Crossover Basketball Camp and a driving force behind 22 years of community-focused player development in London, Ontario.',
       initial: 'U',
     },
