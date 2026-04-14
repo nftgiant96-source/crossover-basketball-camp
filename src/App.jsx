@@ -126,16 +126,17 @@ function Navbar() {
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3 group">
           <img
-            src="https://crossoverbasketballcamp.com/files/crossoverbasketballcamp/crossover_logo.png"
+            src=""
             alt="Crossover Basketball Camp"
             className="h-10 w-auto object-contain"
+            style={{ display: 'none' }}
             onError={(e) => {
               e.target.style.display = 'none'
               e.target.nextSibling.style.display = 'flex'
             }}
           />
           {/* Fallback logo */}
-          <div style={{ display: 'none' }} className="items-center gap-2">
+          <div style={{ display: 'flex' }} className="items-center gap-2">
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#05acae] to-[#049496] flex items-center justify-center font-bold text-white text-sm">
               CB
             </div>
@@ -193,12 +194,9 @@ function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://crossoverbasketballcamp.com/files/crossoverbasketballcamp/All_Photos-1_of_1.jpeg"
+          src="https://images.unsplash.com/photo-1546519638778-5f30b12bdac5?w=1800&q=80"
           alt="Crossover Basketball Camp"
           className="w-full h-full object-cover object-center"
-          onError={(e) => {
-            e.target.src = 'https://images.unsplash.com/photo-1546519638778-5f30b12bdac5?w=1800&q=80'
-          }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
@@ -288,12 +286,9 @@ function About() {
             <div className="relative">
               <div className="relative rounded-lg overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0">
                 <img
-                  src="https://crossoverbasketballcamp.com/files/crossoverbasketballcamp/crossover2017.jpg"
+                  src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=800&q=80"
                   alt="Crossover Basketball Camp 2017"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.src = 'https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=800&q=80'
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
