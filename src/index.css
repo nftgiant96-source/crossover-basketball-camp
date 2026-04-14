@@ -73,7 +73,7 @@
     background: transparent; color: white; font-weight: 700;
     padding: 14px 32px; border-radius: 4px; letter-spacing: 0.05em;
     text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4);
-    transition: all 0.3s ease; display: inline-block; cursor: pointer;
+    transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
   }
   .btn-outline:hover {
     border-color: white; background: rgba(255,255,255,0.08); transform: translateY(-2px);
