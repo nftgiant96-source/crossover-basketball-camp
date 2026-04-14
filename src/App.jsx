@@ -508,9 +508,9 @@ function Gallery() {
         </AnimatedSection>
 
         <AnimatedSection delay={100}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+          <div className="flex sm:grid sm:grid-cols-3 gap-6 mt-10 overflow-x-auto snap-x snap-mandatory pb-4 sm:pb-0 sm:overflow-visible scrollbar-hide">
             {posts.map((p) => (
-              <div key={p.id} className="w-full">
+              <div key={p.id} className="w-[85vw] sm:w-full shrink-0 snap-center">
                 <InstagramEmbed postId={p.id} />
               </div>
             ))}

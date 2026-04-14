@@ -117,6 +117,9 @@
     background-size: 100px 100px;
   }
 
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
   /* Instagram embed overrides */
   .instagram-media {
     min-width: unset !important;
