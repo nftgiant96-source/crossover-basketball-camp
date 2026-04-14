@@ -523,9 +523,9 @@ function Gallery() {
               href="https://www.instagram.com/crossover_camp"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline inline-flex items-center gap-2"
+              className="btn-outline inline-flex items-center justify-center gap-2 flex-row"
             >
-              <InstagramIcon size={18} /> View All on Instagram
+              <InstagramIcon size={18} /><span>View All on Instagram</span>
             </a>
           </div>
         </AnimatedSection>
