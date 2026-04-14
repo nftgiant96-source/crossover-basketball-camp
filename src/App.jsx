@@ -172,7 +172,7 @@ function Navbar() {
               {l}
             </a>
           ))}
-          <a href="#register" onClick={() => setOpen(false)} className="btn-primary text-center text-sm mt-2">
+          <a href="#register" onClick={() => setOpen(false)} className="btn-primary text-center text-sm mt-2 block w-full">
             Register 2026
           </a>
         </div>
@@ -191,7 +191,7 @@ function Hero() {
         <img
           src="/crossover-basketball-camp/hero.png"
           alt="Crossover Basketball Camp"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
@@ -208,10 +208,10 @@ function Hero() {
           </AnimatedSection>
 
           <AnimatedSection delay={100}>
-            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[100px] leading-none tracking-wide text-white mb-2">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[100px] leading-none tracking-wide text-white mb-2">
               DEVELOP
             </h1>
-            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[100px] leading-none tracking-wide mb-6">
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[100px] leading-none tracking-wide mb-6">
               <span className="text-gradient">YOUR GAME.</span>
             </h1>
           </AnimatedSection>
@@ -224,10 +224,10 @@ function Hero() {
 
           <AnimatedSection delay={300}>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#register" className="btn-primary text-center">
+              <a href="#register" className="btn-primary text-center block">
                 Register for 2026
               </a>
-              <a href="#programs" className="btn-outline text-center">
+              <a href="#programs" className="btn-outline text-center block">
                 View Programs
               </a>
             </div>

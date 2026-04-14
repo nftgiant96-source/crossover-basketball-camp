@@ -58,10 +58,11 @@
 
   .btn-primary {
     background: linear-gradient(135deg, #05acae, #049496);
-    color: white; font-weight: 700; padding: 14px 32px;
+    color: white; font-weight: 700; padding: 12px 28px;
     border-radius: 4px; letter-spacing: 0.05em;
     text-transform: uppercase; transition: all 0.3s ease;
     border: 2px solid transparent; display: inline-block; cursor: pointer;
+    white-space: nowrap;
   }
   .btn-primary:hover {
     background: transparent; border-color: #05acae; color: #05acae;
