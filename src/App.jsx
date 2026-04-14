@@ -286,8 +286,8 @@ function About() {
             <div className="relative">
               <div className="relative rounded-lg overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0">
                 <img
-                  src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=800&q=80"
-                  alt="Crossover Basketball Camp 2017"
+                  src="/crossover-basketball-camp/coaches.png"
+                  alt="Coach Graham and Coach Umar"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
