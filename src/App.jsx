@@ -346,7 +346,7 @@ function StatsBanner() {
     { value: 22, suffix: '', label: 'Years in London' },
     { value: 2004, suffix: '', label: 'Founded' },
     { value: 5, suffix: ' Days', label: 'Camp Duration' },
-    { value: 325, suffix: '$', label: 'Per Camper', prefix: '$' },
+    { value: 325, suffix: '', label: 'Per Camper', prefix: '$' },
   ]
 
   return (
