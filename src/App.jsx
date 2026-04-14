@@ -595,9 +595,9 @@ function Registration() {
     <section id="register" className="relative bg-black py-24 sm:py-32 overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#05acae]/6 blur-[100px] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 justify-items-center lg:justify-items-stretch">
           {/* Info */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 w-full text-center lg:text-left">
             <AnimatedSection>
               <div className="section-label mb-3">Join Us</div>
               <h2 className="font-display text-4xl sm:text-5xl text-white tracking-wide leading-tight mb-6">
@@ -643,8 +643,8 @@ function Registration() {
           </div>
 
           {/* Form */}
-          <AnimatedSection delay={150} className="lg:col-span-3">
-            <div className="bg-[#111] border border-white/8 rounded-2xl p-8 sm:p-10">
+          <AnimatedSection delay={150} className="lg:col-span-3 w-full">
+            <div className="bg-[#111] border border-white/8 rounded-2xl p-6 sm:p-10">
               {state.succeeded ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 rounded-full bg-[#05acae]/15 border border-[#05acae]/40 flex items-center justify-center mx-auto mb-5">
