@@ -194,7 +194,7 @@ function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1546519638778-5f30b12bdac5?w=1800&q=80"
+          src="/crossover-basketball-camp/hero.png"
           alt="Crossover Basketball Camp"
           className="w-full h-full object-cover object-center"
         />
