@@ -783,7 +783,7 @@ function Contact() {
                 <div className="flex gap-3">
                   {[
                     { icon: <InstagramIcon size={18} />, label: 'Instagram', href: 'https://www.instagram.com/crossover_camp' },
-                    { icon: <FacebookIcon size={18} />, label: 'Facebook', href: 'http://www.facebook.com' },
+                    { icon: <FacebookIcon size={18} />, label: 'Facebook', href: 'https://www.facebook.com/CampCrossoverBasketballCamp/' },
                   ].map((s) => (
                     <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                       className="w-10 h-10 rounded-lg bg-white/5 border border-white/8 text-gray-400 hover:text-[#05acae] hover:border-[#05acae]/40 flex items-center justify-center transition-all">
@@ -874,7 +874,7 @@ function Footer() {
             <div className="flex gap-3">
               {[
                 { icon: <InstagramIcon size={16} />, href: 'https://www.instagram.com/crossover_camp', label: 'Instagram' },
-                { icon: <FacebookIcon size={16} />, href: 'http://www.facebook.com', label: 'Facebook' },
+                { icon: <FacebookIcon size={16} />, href: 'https://www.facebook.com/CampCrossoverBasketballCamp/', label: 'Facebook' },
               ].map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                   className="w-9 h-9 rounded-lg bg-white/5 border border-white/8 text-gray-500 hover:text-[#05acae] hover:border-[#05acae]/30 flex items-center justify-center transition-all">
