@@ -189,10 +189,13 @@ function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src="/crossover-basketball-camp/hero.png"
-          alt="Crossover Basketball Camp"
-          className="w-full h-full object-cover object-[center_65%] sm:object-[center_55%]"
+        <video
+          src="/crossover-basketball-camp/hero.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
