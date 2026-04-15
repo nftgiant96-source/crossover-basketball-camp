@@ -190,13 +190,15 @@ function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <video
-          src="/crossover-basketball-camp/hero.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover object-center"
-        />
+          poster="/crossover-basketball-camp/hero.png"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+        >
+          <source src="/crossover-basketball-camp/hero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#05acae]/8 blur-[120px] pointer-events-none" />

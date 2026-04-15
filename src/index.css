@@ -120,6 +120,16 @@
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
+  /* Hero video full coverage on all devices */
+  #home video {
+    position: absolute;
+    top: 50%; left: 50%;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
   /* Instagram embed overrides */
   .instagram-media {
     min-width: unset !important;
