@@ -120,6 +120,13 @@
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
+  @media (max-width: 640px) {
+    .hero-video {
+      object-fit: contain !important;
+      background: #000;
+    }
+  }
+
 
   /* Instagram embed overrides */
   .instagram-media {

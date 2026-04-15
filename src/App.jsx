@@ -213,6 +213,7 @@ function Hero() {
           preload="auto"
           x-webkit-airplay="deny"
           webkit-playsinline=""
+          className="hero-video"
           style={{
             position: 'absolute',
             top: 0, left: 0,
