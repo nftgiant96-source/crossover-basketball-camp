@@ -186,16 +186,33 @@ function Navbar() {
    HERO
 ═══════════════════════════════════════════════════ */
 function Hero() {
+  const videoRef = useRef(null)
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    v.muted = true
+    v.play().catch(() => {})
+  }, [])
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           poster="/crossover-basketball-camp/hero.png"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
+          style={{
+            position: 'absolute',
+            top: '50%', left: '50%',
+            transform: 'translate(-50%, -50%)',
+            minWidth: '100%', minHeight: '100%',
+            width: 'auto', height: 'auto',
+            objectFit: 'cover',
+          }}
         >
           <source src="/crossover-basketball-camp/hero.mp4" type="video/mp4" />
         </video>
