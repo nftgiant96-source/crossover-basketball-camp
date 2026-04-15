@@ -191,7 +191,14 @@ function Hero() {
     const v = videoRef.current
     if (!v) return
     v.muted = true
-    v.play().catch(() => {})
+    v.setAttribute('muted', '')
+    v.setAttribute('playsinline', '')
+    v.setAttribute('webkit-playsinline', '')
+    v.load()
+    const tryPlay = () => v.play().catch(() => {})
+    tryPlay()
+    document.addEventListener('touchstart', tryPlay, { once: true })
+    return () => document.removeEventListener('touchstart', tryPlay)
   }, [])
 
   return (
@@ -204,6 +211,8 @@ function Hero() {
           muted
           playsInline
           preload="auto"
+          x-webkit-airplay="deny"
+          webkit-playsinline=""
           style={{
             position: 'absolute',
             top: 0, left: 0,
