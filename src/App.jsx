@@ -229,36 +229,36 @@ function Hero() {
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#05acae]/8 blur-[120px] pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full pt-24 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 w-full pt-20 sm:pt-24 pb-16 sm:pb-20">
         <div className="max-w-3xl">
           <AnimatedSection delay={0}>
-            <div className="section-label mb-4 flex items-center gap-2">
-              <div className="w-8 h-0.5 bg-[#05acae]" />
+            <div className="section-label mb-3 flex items-center gap-2">
+              <div className="w-6 h-0.5 bg-[#05acae]" />
               Est. 2004 · Celebrating 22 Years in London, ON
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={100}>
-            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[100px] leading-none tracking-wide text-white mb-2">
+            <h1 className="font-display text-4xl sm:text-7xl md:text-8xl lg:text-[100px] leading-none tracking-wide text-white mb-1 sm:mb-2">
               DEVELOP
             </h1>
-            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[100px] leading-none tracking-wide mb-6">
+            <h1 className="font-display text-4xl sm:text-7xl md:text-8xl lg:text-[100px] leading-none tracking-wide mb-4 sm:mb-6">
               <span className="text-gradient">YOUR GAME.</span>
             </h1>
           </AnimatedSection>
 
           <AnimatedSection delay={200}>
-            <p className="text-gray-300 text-lg sm:text-xl max-w-xl leading-relaxed mb-10">
+            <p className="text-gray-300 text-base sm:text-xl max-w-xl leading-relaxed mb-6 sm:mb-10">
               London's longest-running basketball camp returns for another summer. Elite coaching, real development, and a community built over 22 years.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={300}>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#register" className="btn-primary text-center block">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a href="#register" className="btn-primary text-center block text-sm sm:text-base">
                 Register for 2026
               </a>
-              <a href="#programs" className="btn-outline text-center block">
+              <a href="#programs" className="btn-outline text-center block text-sm sm:text-base">
                 View Programs
               </a>
             </div>
@@ -266,14 +266,14 @@ function Hero() {
 
           {/* Camp details strip */}
           <AnimatedSection delay={450}>
-            <div className="flex flex-wrap gap-6 sm:gap-10 mt-14 pt-10 border-t border-white/10">
+            <div className="flex flex-wrap gap-5 sm:gap-10 mt-8 sm:mt-14 pt-6 sm:pt-10 border-t border-white/10">
               {[
                 { value: 'July 6–10', label: '2026 Dates' },
                 { value: '$325', label: 'Per Camper' },
                 { value: 'London, ON', label: 'Location' },
               ].map((s) => (
                 <div key={s.label}>
-                  <div className="font-display text-2xl sm:text-3xl text-[#05acae] tracking-wide">{s.value}</div>
+                  <div className="font-display text-xl sm:text-3xl text-[#05acae] tracking-wide">{s.value}</div>
                   <div className="text-xs text-gray-400 font-medium tracking-widest uppercase mt-0.5">{s.label}</div>
                 </div>
               ))}
@@ -302,10 +302,10 @@ function About() {
   ]
 
   return (
-    <section id="about" className="relative bg-black basketball-pattern py-24 sm:py-32">
+    <section id="about" className="relative bg-black basketball-pattern py-16 sm:py-32">
       <div className="divider-line mb-0" />
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
           {/* Image */}
           <AnimatedSection>
             <div className="relative">
@@ -317,7 +317,7 @@ function About() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
-              <div className="absolute -bottom-6 -right-4 sm:right-0 bg-[#05acae] text-white rounded-lg p-5 shadow-xl">
+              <div className="absolute -bottom-4 right-2 sm:right-0 bg-[#05acae] text-white rounded-lg p-4 shadow-xl">
                 <div className="font-display text-5xl leading-none">22</div>
                 <div className="text-xs font-bold tracking-widest uppercase mt-1">Years Strong</div>
               </div>
@@ -436,7 +436,7 @@ function Programs() {
   ]
 
   return (
-    <section id="programs" className="relative bg-[#0D0D0D] py-24 sm:py-32">
+    <section id="programs" className="relative bg-[#0D0D0D] py-16 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <AnimatedSection>
           <div className="text-center mb-16">
@@ -516,7 +516,7 @@ function Gallery() {
   ]
 
   return (
-    <section id="gallery" className="bg-black py-24 sm:py-32">
+    <section id="gallery" className="bg-black py-16 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <AnimatedSection>
           <div className="text-center mb-6">
@@ -585,7 +585,7 @@ function Directors() {
   ]
 
   return (
-    <section className="bg-[#0D0D0D] py-24 sm:py-32">
+    <section className="bg-[#0D0D0D] py-16 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <AnimatedSection>
           <div className="text-center mb-16">
@@ -622,7 +622,7 @@ function Registration() {
   const [state, handleSubmit] = useForm('xwvapanr')
 
   return (
-    <section id="register" className="relative bg-black py-24 sm:py-32 overflow-hidden">
+    <section id="register" className="relative bg-black py-16 sm:py-32 overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#05acae]/6 blur-[100px] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
@@ -770,7 +770,7 @@ function Contact() {
   const [state, handleSubmit] = useForm('xwvapanr')
 
   return (
-    <section id="contact" className="bg-[#0D0D0D] py-24 sm:py-32">
+    <section id="contact" className="bg-[#0D0D0D] py-16 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <AnimatedSection>
           <div className="text-center mb-16">

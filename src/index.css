@@ -122,12 +122,13 @@
 
   @media (max-width: 640px) {
     .hero-video {
-      top: 50% !important;
+      top: 0 !important;
       left: 50% !important;
       width: auto !important;
+      min-width: 100% !important;
       height: 100% !important;
-      transform: translate(-50%, -50%) !important;
-      object-fit: unset !important;
+      transform: translateX(-50%) !important;
+      object-fit: cover !important;
     }
   }
 
