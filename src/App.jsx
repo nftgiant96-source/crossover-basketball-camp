@@ -364,6 +364,117 @@ function About() {
 }
 
 /* ═══════════════════════════════════════════════════
+   NOTABLE ALUMNI
+═══════════════════════════════════════════════════ */
+function NotableAlumni() {
+  const councillors = [
+    { name: 'Greg Morrow', detail: 'Western University' },
+    { name: 'Jason Hawke', detail: 'Michigan Tech — NCAA' },
+    { name: 'Tyson Dunn', detail: 'Western University · University of Buffalo NCAA' },
+    { name: 'Marko Maletic', detail: 'Fanshawe · Western Illinois NCAA' },
+    { name: 'Renee Armstrong', detail: 'Guelph Gryphons' },
+    { name: 'Dave Sewell', detail: 'Asst. Coach — London Lightning' },
+    { name: 'Micah Kirubel', detail: 'Windsor University' },
+    { name: 'Mo Al-Sama\'Neh', detail: 'Fanshawe Falcons' },
+    { name: 'Sebastien Morin', detail: 'Pro Ball — France' },
+    { name: 'Adrian Armstrong', detail: 'Pro Ball — Spain' },
+    { name: 'Eric McDonald', detail: 'Western University' },
+  ]
+
+  const campers = [
+    { name: 'Greg Morrow', detail: 'Western University' },
+    { name: 'Jason Hawke', detail: 'NCAA — Michigan Tech Huskies' },
+    { name: 'Cam Morrison', detail: 'Western University' },
+    { name: 'Caitlyn Croley', detail: 'McMaster University' },
+    { name: 'Matt Gruninger', detail: 'Western University' },
+    { name: 'Nick Hallett', detail: 'University of Toronto · Winnipeg Blue Bombers CFL' },
+    { name: 'Jake Hunter', detail: 'Nipissing University' },
+    { name: 'Micah Kirubel', detail: 'Windsor & Western University' },
+    { name: 'Joey Kirubel', detail: 'Fanshawe College' },
+    { name: 'Bruno Pande', detail: 'Fanshawe College' },
+    { name: 'Lucy Tesseyman', detail: 'Guelph University' },
+    { name: 'Sebastian Morin', detail: 'Pro Ball — France' },
+  ]
+
+  const PersonCard = ({ name, detail, delay }) => (
+    <AnimatedSection delay={delay}>
+      <div className="flex items-start gap-3 p-3.5 rounded-lg bg-white/3 border border-white/6 hover:border-[#05acae]/30 hover:bg-[#05acae]/5 transition-all group">
+        <div className="w-8 h-8 rounded-full bg-[#05acae]/15 text-[#05acae] flex items-center justify-center shrink-0 text-xs font-bold font-display group-hover:bg-[#05acae] group-hover:text-white transition-all">
+          {name.charAt(0)}
+        </div>
+        <div className="min-w-0">
+          <div className="text-white font-semibold text-sm leading-tight">{name}</div>
+          <div className="text-[#05acae]/70 text-xs mt-0.5 leading-snug">{detail}</div>
+        </div>
+      </div>
+    </AnimatedSection>
+  )
+
+  return (
+    <section className="relative bg-[#080808] py-16 sm:py-28 overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-[#05acae]/30 to-transparent" />
+      <div className="absolute inset-0 basketball-pattern opacity-30" />
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
+        <AnimatedSection>
+          <div className="text-center mb-14">
+            <div className="section-label mb-3">Legacy</div>
+            <h2 className="font-display text-4xl sm:text-5xl text-white tracking-wide mb-4">
+              ALUMNI <span className="text-gradient">SPOTLIGHT</span>
+            </h2>
+            <p className="text-gray-400 max-w-xl mx-auto text-sm leading-relaxed">
+              From London courts to university rosters and professional leagues — the Crossover community reaches far and wide.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14">
+          {/* Councillors */}
+          <div>
+            <AnimatedSection>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-0.5 bg-[#05acae]" />
+                <h3 className="font-display text-xl text-white tracking-widest uppercase">Notable Past Councillors</h3>
+              </div>
+            </AnimatedSection>
+            <div className="grid sm:grid-cols-2 gap-2.5">
+              {councillors.map((p, i) => (
+                <PersonCard key={p.name + i} name={p.name} detail={p.detail} delay={i * 50} />
+              ))}
+            </div>
+          </div>
+
+          {/* Campers */}
+          <div>
+            <AnimatedSection>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-0.5 bg-[#05acae]" />
+                <h3 className="font-display text-xl text-white tracking-widest uppercase">Notable Past Campers</h3>
+              </div>
+            </AnimatedSection>
+            <div className="grid sm:grid-cols-2 gap-2.5">
+              {campers.map((p, i) => (
+                <PersonCard key={p.name + i} name={p.name} detail={p.detail} delay={i * 50} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom accent */}
+        <AnimatedSection delay={300}>
+          <div className="mt-14 text-center">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#05acae]/20 bg-[#05acae]/5 text-[#05acae] text-xs font-semibold tracking-widest uppercase">
+              <Star size={12} />
+              22 Years of Champions
+              <Star size={12} />
+            </div>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════════
    STATS BANNER
 ═══════════════════════════════════════════════════ */
 function StatsBanner() {
@@ -963,6 +1074,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <About />
+      <NotableAlumni />
       <StatsBanner />
       <Programs />
       <Gallery />
